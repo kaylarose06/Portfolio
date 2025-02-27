@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
-  padding-top: 0.5px;
+  padding-top: 70px;
 }
 
 h1,
@@ -212,7 +212,7 @@ section {
   }
 
   .project img {
-    width: 100%; /* Adapts to screen size */
+    width: 90%; /* Adapts to screen size */
     height: auto; /* Maintains aspect ratio */
   }
 }
@@ -476,4 +476,229 @@ footer {
 
 .divider img {
   width: 400px;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px; /* Reduce space */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .hero-text {
+    width: 90%;
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .hero-heading {
+    font-size: 36px; /* Reduce size on mobile */
+    text-align: center;
+    width: 100%;
+  }
+
+  .profile-image img {
+    width: 80%;
+    height: auto;
+    max-width: 300px; /* Prevent it from getting too large */
+  }
+
+  #arrow {
+    display: none; /* Hide if causing issues */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .about-text {
+    width: 90%;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .about-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+  }
+
+  .about-image img {
+    max-width: 150px; /* Adjust images to fit properly */
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-text ul {
+    padding-left: 0;
+    list-style-position: inside;
+  }
+
+  .about-text li {
+    text-align: left;
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+  .typing-container {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    word-break: break-word;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #scrollToTop {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .internship-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .internship-container {
+    width: 100%;
+    text-align: center;
+  }
+
+  .internship-container ul {
+    padding-left: 0;
+    list-style-position: inside;
+    text-align: left;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .internship-image img {
+    width: 80%; /* Adjust size to prevent overflow */
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 10px auto; /* Centers the images */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .contact-image img {
+    width: 80%; /* Resize image for better fit */
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+  }
+
+  .contact-info {
+    text-align: center;
+    width: 100%;
+  }
+
+  .contact-info p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+}
+
+footer {
+  background-color: #54432e;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 16px;
+  width: 100%;
+  position: fixed; /* Keeps footer at bottom */
+  bottom: 0;
+  left: 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Fix */
+@media screen and (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 15px 10px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+  }
+
+  .footer-links a {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+  }
 }

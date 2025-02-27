@@ -460,6 +460,7 @@ footer {
   flex-direction: column;
   align-items: center;
   gap: 5px;
+  flex-wrap: nowrap;
 }
 
 .footer-links a {
@@ -524,21 +525,16 @@ footer {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 30px;
   }
 
   .about-text {
     width: 90%;
-    text-align: center;
-    font-size: 18px;
+    text-align: center; /* Ensure text is centered */
   }
 
   .about-image {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     width: 80%;
+    text-align: center;
   }
 
   .about-image img {
@@ -616,11 +612,7 @@ footer {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 20px;
-    width: 90%;
-    margin: 0 auto;
   }
-
   .contact-image img {
     width: 80%; /* Resize image for better fit */
     max-width: 250px;
@@ -631,7 +623,6 @@ footer {
 
   .contact-info {
     text-align: center;
-    width: 100%;
   }
 
   .contact-info p {
@@ -685,15 +676,13 @@ footer {
 @media screen and (max-width: 768px) {
   .footer-content {
     flex-direction: column;
+    align-items: center;
     text-align: center;
-    gap: 10px;
-    padding: 15px 10px;
   }
 
   .footer-links {
     flex-direction: column;
-    text-align: center;
-    gap: 5px;
+    align-items: center;
   }
 
   .footer-links a {

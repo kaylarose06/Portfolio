@@ -23,41 +23,119 @@ document.addEventListener("DOMContentLoaded", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  // Typing Effect - about
+  // Typing Effect - hero
   const headingText = "HI, I'M KAYLA LUGO";
   let j = 0;
-  const newspeed = 100; // Typing speed in ms
+  const newspeed = 100;
   const heroTypingElement = document.getElementById("hero-typing");
 
   function typeHeading() {
     if (j < headingText.length) {
-      heroTypingElement.innerHTML = headingText.substring(0, j + 1); // Types without pushing
+      heroTypingElement.innerHTML = headingText.substring(0, j + 1);
       j++;
       setTimeout(typeHeading, newspeed);
     }
   }
 
-  // Start typing effect if element exists
   if (heroTypingElement) {
     typeHeading();
   }
 
-  // Typing Effect - Runs When Page Loads
+  // Typing Effect - about section
   const text = 'print("I love cybersecurity!")';
   let i = 0;
-  const speed = 100; // Typing speed in ms
+  const speed = 100;
   const typingElement = document.getElementById("typing-text");
 
   function typeEffect() {
     if (i < text.length) {
-      typingElement.innerHTML = text.substring(0, i + 1); // Updates text without extra cursor
+      typingElement.innerHTML = text.substring(0, i + 1);
       i++;
       setTimeout(typeEffect, speed);
     }
   }
 
-  // Only start typing if element exists
   if (typingElement) {
     typeEffect();
+  }
+
+  // Poll Logic
+  const pollContainer = document.getElementById("poll-options");
+
+  if (pollContainer) {
+    const pollData = [
+      { label: "Coffee ☕", votes: 4 },
+      { label: "Boba 🧋", votes: 3 },
+      { label: "Energy Drinks ⚡", votes: 2 },
+      { label: "Pure Spite 😤", votes: 1 },
+    ];
+
+    const savedVotes = JSON.parse(localStorage.getItem("pollVotes"));
+    if (savedVotes) {
+      pollData.forEach((option, index) => {
+        option.votes = savedVotes[index].votes;
+      });
+    }
+
+    const userVote = localStorage.getItem("userVote");
+
+    function renderPoll() {
+      pollContainer.innerHTML = "";
+      const totalVotes = pollData.reduce(
+        (acc, option) => acc + option.votes,
+        0
+      );
+
+      pollData.forEach((option, index) => {
+        const percentage =
+          totalVotes > 0 ? Math.round((option.votes / totalVotes) * 100) : 0;
+        const isSelected = userVote == index;
+
+        const optionElement = document.createElement("div");
+        optionElement.className = `poll-option ${isSelected ? "selected" : ""}`;
+        optionElement.innerHTML = `
+          <label>
+            <input type="radio" name="vote" ${isSelected ? "checked" : ""} ${
+          userVote !== null ? "disabled" : ""
+        } />
+            ${option.label}
+          </label>
+          <div class="bar"><div class="fill" style="width: ${percentage}%"></div></div>
+          <span class="percentage">${percentage}%</span>
+        `;
+
+        const radioInput = optionElement.querySelector("input");
+        radioInput.addEventListener("click", () => {
+          if (userVote === null) {
+            pollData[index].votes++;
+            localStorage.setItem("pollVotes", JSON.stringify(pollData));
+            localStorage.setItem("userVote", index);
+            renderPoll();
+          }
+        });
+
+        pollContainer.appendChild(optionElement);
+      });
+    }
+
+    renderPoll();
+  }
+
+  // === Popup Logic ===
+  const popup = document.getElementById("popup");
+  const popupClose = document.getElementById("popupClose");
+
+  // Show popup after 3 seconds
+  setTimeout(() => {
+    if (popup) {
+      popup.style.display = "block";
+    }
+  }, 3000);
+
+  // Close popup on click
+  if (popupClose) {
+    popupClose.addEventListener("click", () => {
+      popup.style.display = "none";
+    });
   }
 });

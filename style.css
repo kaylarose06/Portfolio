@@ -1,8 +1,12 @@
 /* General Styles */
+
 html,
 body {
   overflow-x: hidden;
   max-width: 100%;
+}
+
+body {
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
   padding-top: 0.5px;
@@ -18,18 +22,19 @@ h3 {
 .navbar {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 0; /* Ensure it starts at the very left */
+  width: 100%; /* Make sure it spans full width */
   background-color: #54432e;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Ensures padding doesn't break layout */
   z-index: 1000;
 }
 
+/* Fix spacing for navigation links */
 .nav-links {
   list-style: none;
   display: flex;
@@ -49,44 +54,39 @@ h3 {
 }
 
 /* Hero Section */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
-}
 
+/* Hero Section - Image Left, Text Right */
 .hero-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 130px;
-  max-width: 1000px;
-  margin: 0 auto;
+  gap: 130px; /* Space between image and text */
+  max-width: 1000px; /* Adjust width as needed */
+  margin: 0 auto; /* Centers the whole section */
 }
 
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  text-align: center;
+  padding-top: 100px;
+}
+
+/* Hero Text Styling */
+.hero-text {
+  max-width: 500px; /* Controls text width */
+  text-align: left; /* Aligns text to the left */
+  font-size: 30px;
+}
+
+/* Profile Image Styling */
 .profile-image img {
-  width: 550px;
+  width: 550px; /* Adjust size as needed */
   height: 550px;
   border-radius: 50%;
   object-fit: cover;
-}
-
-.hero-heading {
-  font-family: "Prata", serif;
-  font-size: 48px;
-  color: black;
-  white-space: nowrap;
-  overflow: hidden;
-  width: fit-content;
-  display: inline-block;
-}
-
-.hero-text {
-  max-width: 500px;
-  text-align: left;
-  font-size: 30px;
 }
 
 .resume-button {
@@ -113,37 +113,38 @@ section {
 /* About Section */
 .about-content {
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 50px;
-  max-width: 1000px;
+  align-items: flex-start; /* Aligns items vertically */
+  justify-content: center; /* Centers everything */
+  gap: 50px; /* Space between sections */
+  max-width: 1000px; /* Adjust as needed */
   margin: 0 auto;
 }
 
+/* Equal width for both text sections */
 .about-text {
-  width: 40%;
-  text-align: left;
+  width: 40%; /* Ensures both sections take up equal space */
+  text-align: left; /* Aligns text to the left */
   font-size: 20px;
-}
-
-.about-image {
-  width: 10%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.about-image img {
-  max-width: 100px;
-  height: auto;
 }
 
 .big-title {
   font-size: 20px;
 }
+/* Centering the image */
+.about-image {
+  width: 10%; /* Keeps the images centered */
+  display: flex;
+  flex-direction: column; /* Stacks images vertically */
+  align-items: center; /* Centers them horizontally */
+  gap: 10px; /* Adds spacing between images */
+}
 
-/* Internship Section */
+.about-image img {
+  max-width: 100px; /* Adjust size as needed */
+  height: auto;
+}
+
+/* What I'm Up To */
 .internship-content {
   display: flex;
   align-items: center;
@@ -158,14 +159,14 @@ section {
 }
 
 .internship-container {
-  text-align: left;
-  max-width: 800px;
-  margin: 0 auto;
+  text-align: left; /* Center text */
+  max-width: 800px; /* Limit width for better readability */
+  margin: 0 auto; /* Center horizontally */
 }
 
 .internship-container ul {
-  display: inline-block;
-  text-align: left;
+  display: inline-block; /* Align the list with the paragraph */
+  text-align: left; /* Keep bullet points aligned left */
 }
 
 /* Projects */
@@ -179,13 +180,12 @@ section {
 
 .project {
   text-align: center;
-  width: 30%;
+  width: 30%; /* Ensures all projects take equal width */
 }
-
 .project img {
-  width: 250px;
-  height: 200px;
-  object-fit: cover;
+  width: 250px; /* Makes all images scale to their container */
+  height: 200px; /* Ensures uniform height */
+  object-fit: cover; /* Prevents image stretching */
   border-radius: 10px;
 }
 
@@ -208,80 +208,13 @@ section {
   background-color: #3b2b1a;
 }
 
-/* Contact */
-.contact-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-}
-
-.contact-image img {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-}
-
-.contact-info a {
-  color: #54432e;
-  text-decoration: none;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
-/* Scroll-To-Top Floating Arrow */
-#scrollToTop {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 60px;
-  background-color: #54432e;
-  border-radius: 50%;
-  cursor: pointer;
-  display: none;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 10px rgba(84, 67, 46, 0.3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-#scrollToTop img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  display: block;
-}
-
-#scrollToTop:hover {
-  background-color: #3b2b1a;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-  animation: bounceUp 1s infinite;
-}
-
-#scrollToTop:hover img {
-  transform: translateY(-4px);
-  filter: drop-shadow(0 0 6px white);
-}
-
-/* Bounce Animation */
-@keyframes bounceUp {
-  0%,
-  100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  50% {
-    transform: translateX(-50%) translateY(-10px);
-  }
-}
-
-/* Responsive Fixes for Mobile */
+/* Responsive Design - Stacks on Smaller Screens */
 @media screen and (max-width: 768px) {
+  .project-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .navbar {
     padding: 10px 20px;
   }
@@ -297,50 +230,68 @@ section {
     overflow-x: auto;
   }
 
-  .hero {
-    height: auto;
-    padding-top: 100px;
+  .project {
+    width: 80%; /* Makes images take full width */
+  }
+
+  .project img {
+    width: 100%; /* Adapts to screen size */
+    height: auto; /* Maintains aspect ratio */
+  }
+
+  .contact-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-image img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .poll-box {
+    width: 90%;
+    margin-top: 30px;
+  }
+
+  .contact-info {
+    text-align: center;
   }
 
   .hero-content {
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    text-align: center;
     padding: 0 20px;
-    text-align: center;
-  }
-
-  .hero-heading {
-    font-size: 28px;
-    white-space: normal;
-    word-break: break-word;
-    line-height: 1.2;
-    width: 100%;
-    text-align: center;
-    padding: 0 10px;
-  }
-
-  #hero-typing {
-    min-width: auto;
-    display: inline-block;
   }
 
   .hero-text {
-    font-size: 16px;
-    line-height: 1.5;
-    max-width: 100%;
+    font-size: 18px;
+    line-height: 1.4;
+    max-width: 90%;
     margin: 0 auto;
-  }
-
-  .resume-button {
-    font-size: 14px;
-    padding: 8px 16px;
-    margin-top: 15px;
   }
 
   .profile-image img {
     width: 250px;
     height: 250px;
+  }
+
+  .hero-heading {
+    font-size: 32px !important;
+    white-space: normal !important;
+    word-break: break-word;
+    text-align: center;
+    line-height: 1.2;
+    width: 100% !important;
+    display: block !important;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+
+  #hero-typing {
+    min-width: auto;
+    display: inline-block;
   }
 
   .about-content {
@@ -376,37 +327,381 @@ section {
     height: auto;
     border-radius: 50%;
   }
+}
 
-  .project-gallery {
-    flex-direction: column;
-    align-items: center;
-  }
+.project-button {
+  background-color: #54432e; /* Your theme color */
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
 
-  .project {
-    width: 80%;
-  }
+/* Hover Effect - Subtle Scale and Glow */
+.project-button:hover {
+  transform: scale(1.1); /* Slightly enlarges */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow effect */
+}
 
-  .project img {
-    width: 100%;
-    height: auto;
-  }
+/* Button Animation - Ripple Effect */
+.project-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: width 0.4s, height 0.4s, opacity 0.4s;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
 
-  .contact-content {
-    flex-direction: column;
-    align-items: center;
-  }
+.project-button:active::after {
+  width: 0;
+  height: 0;
+  opacity: 1;
+  transition: 0s;
+}
 
-  .contact-image img {
-    width: 250px;
-    height: 250px;
-  }
+/* Contact */
+.contact-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
 
-  .poll-box {
-    width: 90%;
-    margin-top: 30px;
-  }
+.contact-image img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
 
-  .contact-info {
-    text-align: center;
+.contact-info a {
+  color: #54432e;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Scroll-To-Top Floating Arrow - Centered */
+#scrollToTop {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  background-color: #54432e; /* Your signature brown */
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(84, 67, 46, 0.3); /* Soft brown glow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+#scrollToTop img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  display: block;
+}
+
+#scrollToTop:hover {
+  background-color: #3b2b1a; /* Darker brown on hover */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); /* Glow highlight */
+  animation: bounceUp 1s infinite;
+}
+
+#scrollToTop:hover img {
+  transform: translateY(-4px);
+  filter: drop-shadow(0 0 6px white); /* Glow arrow */
+}
+
+/* Bounce Animation */
+@keyframes bounceUp {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
   }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+.video-container {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically if needed */
+  width: 100%; /* Ensures full width */
+  margin-top: 40px; /* Space from the About section */
+}
+
+.video-container iframe {
+  width: 80%; /* Responsive width */
+  max-width: 800px; /* Limits max size */
+  height: 450px;
+}
+
+.typing-container {
+  font-family: monospace;
+  font-size: 16px;
+  color: #54432e; /* Match theme */
+  display: inline-block; /* Keeps it inline */
+  margin-left: 20px; /* Adjust spacing */
+  white-space: nowrap; /* Prevents wrapping */
+}
+
+/* Cursor always at the end */
+.typing-container::after {
+  content: "|"; /* Cursor */
+  display: inline-block;
+  margin-left: 2px;
+  animation: blinkCursor 0.8s steps(2, start) infinite;
+}
+
+/* Blinking cursor effect */
+@keyframes blinkCursor {
+  50% {
+    opacity: 0;
+  }
+}
+
+.hero-heading {
+  font-family: "Prata", serif;
+  font-size: 48px;
+  color: black;
+  white-space: nowrap;
+  overflow: hidden;
+  width: fit-content;
+  display: inline-block;
+}
+
+/* Cursor always present at the end */
+#hero-typing::after {
+  content: "|"; /* Cursor */
+  display: inline-block;
+  margin-left: 5px;
+  animation: blinkCursor 0.8s steps(2, start) infinite;
+}
+
+@keyframes blinkCursor {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Pre-reserve space so text doesn't shift */
+#hero-typing {
+  min-width: 18ch; /* Reserves space for 18 characters */
+  display: inline-block;
+}
+/* #arrow { */
+/* position: absolute; */
+/* width: 60px;  */
+/* left: 65%; */
+/* top: 75%; 
+  transform: rotate(10deg);  */
+/* animation: bounce 1.5s infinite ease-in-out; */
+/* }  */
+
+/* Responsive Fix for Mobile */
+/* @media screen and (max-width: 768px) { */
+/* #arrow { */
+/* width: 50px;  */
+/* left: 55%; 
+    top: 78%;  */
+/* } */
+/* } */
+
+/* Bouncing effect for animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(10deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(10deg);
+  }
+}
+
+#att-logo {
+  display: block;
+  margin: 20px auto; /* Center the image */
+  width: 100px; /* Adjust the size as needed */
+  opacity: 0; /* Start hidden */
+  transform: translateY(20px); /* Start slightly lower */
+  animation: fadeInUp 1.5s ease-in-out forwards; /* Apply animation */
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.bounce-image {
+  display: block;
+  margin: 20px auto; /* Centers the image */
+  width: 150px; /* Adjust the size as needed */
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+footer {
+  background-color: #54432e;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 16px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-links a:hover {
+  color: #c4a484; /* Lighter shade on hover */
+}
+
+.divider img {
+  width: 400px;
+}
+
+.poll-box {
+  width: 300px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.poll-box h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.poll-option {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.poll-option.selected {
+  border-color: #54432e;
+}
+
+.poll-option input[type="radio"] {
+  accent-color: #54432e;
+  transform: scale(1.2);
+}
+
+.bar {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  height: 8px;
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.fill {
+  background-color: #54432e;
+  height: 100%;
+  transition: width 0.3s ease-in-out;
+}
+
+.percentage {
+  font-weight: bold;
+  font-size: 14px;
+  min-width: 40px;
+  text-align: right;
+}
+
+.poll-option input[type="radio"] {
+  accent-color: #54432e;
+  transform: scale(1.2);
+}
+
+.popup {
+  position: fixed;
+  top: 80px;
+  right: 30px;
+  background-color: #d2cdc8;
+  color: #54432e;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 2000;
+  max-width: 300px;
+  display: none; /* hidden by default */
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.popup-content {
+  position: relative;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.popup-close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #54432e;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popup {
+  z-index: 9999;
 }

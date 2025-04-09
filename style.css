@@ -1,10 +1,10 @@
 /* General Styles */
 
-html,
-body {
-  overflow-x: hidden;
+/* html,
+body { */
+/* overflow-x: hidden;
   max-width: 100%;
-}
+} */
 
 body {
   margin: 0;
@@ -63,6 +63,7 @@ h3 {
   gap: 130px; /* Space between image and text */
   max-width: 1000px; /* Adjust width as needed */
   margin: 0 auto; /* Centers the whole section */
+  padding: 0 20px;
 }
 
 .hero {
@@ -75,10 +76,19 @@ h3 {
 }
 
 /* Hero Text Styling */
+
 .hero-text {
-  max-width: 500px; /* Controls text width */
-  text-align: left; /* Aligns text to the left */
-  font-size: 30px;
+  font-size: 16px;
+  line-height: 1.4;
+  max-width: 100%;
+  margin-bottom: 15px;
+}
+.hero-heading {
+  font-size: 28px;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.2;
+  margin-bottom: 10px;
 }
 
 /* Profile Image Styling */

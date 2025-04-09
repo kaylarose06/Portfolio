@@ -13,7 +13,10 @@
   </head>
 
   <!-- Floating Scroll-to-Top Arrow -->
-  <div id="scrollToTop">&#8593;</div>
+  <div id="scrollToTop">
+    <img src="arrowup.png" alt="Scroll to top" />
+  </div>
+  
 
   <body>
     <!-- Navigation Bar -->
@@ -43,7 +46,9 @@
           </p>
         
           
-          <a href="resume.pdf" class="resume-button">resume</a>   <img src="arrow.png" id="arrow" alt="Arrow pointing to resume" />
+          <a href="resume.pdf" class="resume-button" target="_blank">resume</a>
+          <!-- <img src="arrow.png" id="arrow" alt="Arrow pointing to resume" /> -->
+          
         </div>
       </div>
     </section>
@@ -79,9 +84,9 @@
         </ul> 
         </div>
         <div class="about-image">
-          <img src="bow.jpg" alt="A brown ribbon bow!" />
+          <img src="bow.png" alt="A brown ribbon bow!" />
           <img src="spacer.jpg" />
-          <img src="tea.jpg" alt="A brown button!">
+          <img src="tea.png" alt="A brown button!">
         </div>
         <div class="about-text">
           <h3>Skills</h3>
@@ -202,6 +207,15 @@
       <p>LinkedIn: <a href="https://www.linkedin.com/in/kaylarlugo/" target="_blank">linkedin.com/in/kaylarlugo</a></p>
       <p>Email: <a href="mailto:kaylaroselugo@gmail.com">kaylaroselugo@gmail.com</a></p>
     </div>
+
+    <!-- Poll Section -->
+    <div class="poll-box">
+      <h3>Best fuel for a long coding project?</h3>
+      <div id="poll-options">
+        <!--JS-->
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -220,6 +234,15 @@
     </div>
   </div>
 </footer>
+
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="popup-close" id="popupClose">&times;</span>
+    <h3>Hey you!</h3>
+    <p>I’m so glad you’re here. Whether you're a recruiter, fellow dev, or just curious — feel free to poke around my site!</p>
+  </div>
+</div>
+
 
 
     <script src="script.js"></script>

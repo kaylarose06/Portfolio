@@ -350,14 +350,15 @@ section {
     text-align: center;
   }
 
+  .skills-list,
   .award-list {
     font-size: 16px;
     line-height: 1.5;
-  }
-
-  .skills-list {
-    font-size: 16px;
-    line-height: 1.5;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    text-align: left;
   }
 
   .about-image {
@@ -776,18 +777,12 @@ footer {
   pointer-events: none; /* avoids interfering with clicks */
 }
 
+.skills-list,
 .award-list {
   padding-left: 20px;
   margin-top: 10px;
   font-size: 18px;
   line-height: 1.6;
-  list-style-position: inside; /* Keeps bullets aligned with text */
-}
-
-.skills-list {
-  padding-left: 20px;
-  margin-top: 10px;
-  font-size: 18px;
-  line-height: 1.6;
   list-style-position: inside;
+  text-align: left;
 }

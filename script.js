@@ -100,24 +100,36 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     renderPoll();
-  }
+  } // === Hero Name Typing Animation with Responsive Stacking ===
+  const heroLine1 = document.getElementById("hero-line1");
+  const heroLine2 = document.getElementById("hero-line2");
 
-  // === Name Typing Animation ===
-  const headingText = "HI, I'M KAYLA LUGO";
+  const line1Text = "HI, I'M ";
+  const line2Text = "KAYLA LUGO";
+  let i = 0;
   let j = 0;
   const speed = 100;
-  const heroTypingElement = document.getElementById("hero-typing");
 
-  function typeHeading() {
-    if (j < headingText.length) {
-      heroTypingElement.innerHTML = headingText.substring(0, j + 1);
-      j++;
-      setTimeout(typeHeading, speed);
+  function typeLine1() {
+    if (i < line1Text.length) {
+      heroLine1.innerHTML = line1Text.substring(0, i + 1);
+      i++;
+      setTimeout(typeLine1, speed);
+    } else {
+      setTimeout(typeLine2, speed);
     }
   }
 
-  if (heroTypingElement) {
-    typeHeading();
+  function typeLine2() {
+    if (j < line2Text.length) {
+      heroLine2.innerHTML = line2Text.substring(0, j + 1);
+      j++;
+      setTimeout(typeLine2, speed);
+    }
+  }
+
+  if (heroLine1 && heroLine2) {
+    typeLine1();
   }
 
   // === About Section Typing Animation ===

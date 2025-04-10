@@ -3,14 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const popup = document.getElementById("popup");
   const popupClose = document.getElementById("popupClose");
 
-  // Show popup after 3 seconds
   setTimeout(() => {
     if (popup) {
       popup.style.display = "block";
     }
   }, 3000);
 
-  // Close popup on click
   if (popupClose) {
     popupClose.addEventListener("click", () => {
       popup.style.display = "none";
@@ -88,7 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
         pollContainer.appendChild(div);
       });
 
-      // Lock voting + add thank-you note
       if (voted !== null) {
         const note = document.createElement("p");
         note.textContent = "You've already voted — thanks for your input!";
@@ -100,52 +97,39 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     renderPoll();
-  } // === Hero Name Typing Animation with Responsive Stacking ===
-  const heroLine1 = document.getElementById("hero-line1");
-  const heroLine2 = document.getElementById("hero-line2");
-
-  const line1Text = "HI, I'M ";
-  const line2Text = "KAYLA LUGO";
+  }
+  const heroTypingDesktop = document.getElementById("hero-typing-desktop");
+  const text = "HI, I'M KAYLA LUGO";
   let i = 0;
-  let j = 0;
   const speed = 100;
+  let animationStarted = false;
 
-  function typeLine1() {
-    if (i < line1Text.length) {
-      heroLine1.innerHTML = line1Text.substring(0, i + 1);
+  function typeDesktopHeading() {
+    if (i < text.length) {
+      heroTypingDesktop.innerHTML = text.substring(0, i + 1);
       i++;
-      setTimeout(typeLine1, speed);
+      setTimeout(typeDesktopHeading, speed);
     } else {
-      setTimeout(typeLine2, speed);
+      animationStarted = true;
     }
   }
 
-  function typeLine2() {
-    if (j < line2Text.length) {
-      heroLine2.innerHTML = line2Text.substring(0, j + 1);
-      j++;
-      setTimeout(typeLine2, speed);
+  // Run animation if screen is big at load
+  if (window.innerWidth >= 768 && heroTypingDesktop) {
+    typeDesktopHeading();
+    animationStarted = true;
+  }
+
+  // Watch for resizing from mobile → desktop
+  window.addEventListener("resize", () => {
+    if (
+      window.innerWidth >= 768 &&
+      !animationStarted &&
+      heroTypingDesktop &&
+      heroTypingDesktop.innerHTML === ""
+    ) {
+      i = 0;
+      typeDesktopHeading();
     }
-  }
-
-  if (heroLine1 && heroLine2) {
-    typeLine1();
-  }
-
-  // === About Section Typing Animation ===
-  const aboutTypingText = 'print("I love cybersecurity!")';
-  let k = 0;
-  const aboutTypingElement = document.getElementById("typing-text");
-
-  function typeAbout() {
-    if (k < aboutTypingText.length) {
-      aboutTypingElement.innerHTML = aboutTypingText.substring(0, k + 1);
-      k++;
-      setTimeout(typeAbout, 100);
-    }
-  }
-
-  if (aboutTypingElement) {
-    typeAbout();
-  }
+  });
 });

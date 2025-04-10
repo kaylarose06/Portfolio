@@ -633,7 +633,8 @@ footer {
 }
 
 .divider img {
-  width: 400px;
+  width: 350px;
+  padding-left: 25px;
 }
 
 .poll-box {

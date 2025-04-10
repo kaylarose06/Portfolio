@@ -350,6 +350,16 @@ section {
     text-align: center;
   }
 
+  .award-list {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .skills-list {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
   .about-image {
     width: 100%;
     flex-direction: row;
@@ -764,4 +774,20 @@ footer {
   font-weight: 500;
   font-family: monospace;
   pointer-events: none; /* avoids interfering with clicks */
+}
+
+.award-list {
+  padding-left: 20px;
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 1.6;
+  list-style-position: inside; /* Keeps bullets aligned with text */
+}
+
+.skills-list {
+  padding-left: 20px;
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 1.6;
+  list-style-position: inside;
 }

@@ -98,6 +98,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     renderPoll();
   }
+
+  // === About Section Typing Animation ===
+  const aboutTypingText = 'print("I love cybersecurity!")';
+  let aboutIndex = 0;
+  const aboutTypingElement = document.getElementById("typing-text");
+
+  function typeAbout() {
+    if (aboutIndex < aboutTypingText.length) {
+      aboutTypingElement.innerHTML = aboutTypingText.substring(
+        0,
+        aboutIndex + 1
+      );
+      aboutIndex++;
+      setTimeout(typeAbout, 100);
+    }
+  }
+
+  if (aboutTypingElement) {
+    typeAbout();
+  }
+
+  // ===typing for name =====
   const heroTypingDesktop = document.getElementById("hero-typing-desktop");
   const text = "HI, I'M KAYLA LUGO";
   let i = 0;

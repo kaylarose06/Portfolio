@@ -17,6 +17,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // === Scroll to Top Arrow Logic ===
+  const scrollToTopBtn = document.getElementById("scrollToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollToTopBtn.style.display = "flex";
+    } else {
+      scrollToTopBtn.style.display = "none";
+    }
+
+    if (scrollToTopBtn) {
+      scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+  });
+
   // === Poll Logic ===
   const pollContainer = document.getElementById("poll-options");
 

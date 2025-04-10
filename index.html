@@ -13,10 +13,7 @@
   </head>
 
   <!-- Floating Scroll-to-Top Arrow -->
-  <div id="scrollToTop">
-    <img src="arrowup.png" alt="Scroll to top" />
-  </div>
-  
+  <div id="scrollToTop">&#8593;</div>
 
   <body>
     <!-- Navigation Bar -->
@@ -30,29 +27,23 @@
       </ul>
     </nav>
 
-    <div id="viewer-count"> 0 viewing</div>
-
-
     <section class="hero">
       <div class="hero-content">
         <div class="profile-image">
           <img src="profile.jpg" alt="Profile Image" />
         </div>
         <div class="hero-text">
-          <h1 class="hero-heading">
-            <span id="hero-typing-desktop"></span>
-            <span id="hero-text-mobile">HI, I'M<br>KAYLA LUGO</span>
-          </h1>
+          <h1 class="hero-heading"><span id="hero-typing"></span></h1>
 
+
+         </h1>
           <p>
             Aspiring Cybersecurity expert, computer science student, and a lover
             of cats.
           </p>
         
           
-          <a href="resume.pdf" class="resume-button" target="_blank">resume</a>
-          <!-- <img src="arrow.png" id="arrow" alt="Arrow pointing to resume" /> -->
-          
+          <a href="resume.pdf" class="resume-button">resume</a>   <img src="arrow.png" id="arrow" alt="Arrow pointing to resume" />
         </div>
       </div>
     </section>
@@ -74,30 +65,38 @@
           <p></p>
           <p></p>
           <h3>Awards/Recognitions:</h3>
-          <ul class="award-list">
-            <li>Student Leader of the Year (2023, UCNJ)</li>
-            <li>CS Medal (Rochester Institute of Technology)</li>
-            <li>National Science Award Scholarship (UCNJ)</li>
-            <li>Gibson Family Scholarship (Rutgers)</li>
-            <li>Computer Science Club President (2022–2023 UCNJ)</li>
-          </ul>
-          
+          <ul> 
+            <li> Student Leader of the Year (2023, UC)</li>
+            <p></p>
+          <li>CS Medal (Rochester Institue of Technology)</li>
+          <p></p>
+          <li>National Science Award Scholarship (UC)</li>
+          <p></p>
+          <li>Gibson Family Scholarship (Rutgers)</li>
+          <p></p>
+          <li>Computer Science Club President (2022-2023 UC) </li>
         
         </ul> 
         </div>
         <div class="about-image">
-          <img src="bow.png" alt="A brown ribbon bow!" />
+          <img src="bow.jpg" alt="A brown ribbon bow!" />
           <img src="spacer.jpg" />
-          <img src="tea.png" alt="A brown button!">
+          <img src="tea.jpg" alt="A brown button!">
         </div>
         <div class="about-text">
           <h3>Skills</h3>
-          <ul class="skills-list">
-            <li><strong>Languages:</strong> C++, Python, HTML, CSS, Java</li>
-            <li><strong>Operating Environments:</strong> Windows, macOS, Linux</li>
-            <li><strong>Business Tools:</strong> Wireshark, Wordpress, PowerBI, Canva, Tinkercad, VSCode, Google Analytics</li>
+          <ul>
+              <li><strong>Languages:</strong> C++, Python, HTML, CSS, Java</li>
+              <p></p>
+              <li><strong>Operating Environments:</strong> Windows, macOS, Linux</li>
+              <p></p>
+              <li><strong>Business Tools:</strong> Wireshark, Wordpress, PowerBI, Canva, Tinkercad, VSCode, Google Analytics</li>
+              <p></p>
+              <span class="typing-container"><code id="typing-text"></code></span>
           </ul>
-          <span class="typing-container"><code id="typing-text"></code></span>
+          
+        
+          
         </div>
       </div>
     </section>
@@ -203,15 +202,6 @@
       <p>LinkedIn: <a href="https://www.linkedin.com/in/kaylarlugo/" target="_blank">linkedin.com/in/kaylarlugo</a></p>
       <p>Email: <a href="mailto:kaylaroselugo@gmail.com">kaylaroselugo@gmail.com</a></p>
     </div>
-
-    <!-- Poll Section -->
-    <div class="poll-box">
-      <h3>Best fuel for a long coding project?</h3>
-      <div id="poll-options">
-        <!--JS-->
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -231,13 +221,6 @@
   </div>
 </footer>
 
-<div id="popup" class="popup">
-  <div class="popup-content">
-    <span class="popup-close" id="popupClose">&times;</span>
-    <h3>Hey you!</h3>
-    <p>I’m so glad you’re here. Whether you're a recruiter, fellow dev, or just curious — feel free to poke around my site!</p>
-  </div>
-</div>
 
     <script src="script.js"></script>
   </body>

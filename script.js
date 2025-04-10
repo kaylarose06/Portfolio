@@ -155,3 +155,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// === Viewer Count Using CountAPI ===
+const viewerCountEl = document.getElementById("viewer-count");
+const namespace = "kaylalugo-portfolio";
+const key = "live-viewers";
+
+fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
+  .then((res) => res.json())
+  .then((data) => {
+    const simulatedViewers = Math.max(1, Math.floor(data.value / 3));
+    viewerCountEl.textContent = `👁️ ${simulatedViewers} viewing`;
+  });

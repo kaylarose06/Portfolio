@@ -750,3 +750,18 @@ footer {
 .popup {
   z-index: 9999;
 }
+
+#viewer-count {
+  position: fixed;
+  top: 65px; /* slightly below navbar */
+  left: 10px;
+  font-size: 12px;
+  background-color: #d2cdc8;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  z-index: 999;
+  font-weight: 500;
+  font-family: monospace;
+  pointer-events: none; /* avoids interfering with clicks */
+}

@@ -287,10 +287,15 @@ section {
     max-width: 90%;
     margin: 0 auto;
   }
+  /* 
+  .hero {
+    padding-top: 70px; /* was 100px or more — reduce it */
+  /* } */
 
   .profile-image img {
     width: 350px;
     height: 350px;
+    margin-bottom: 5px;
   }
 
   .hero-heading {
@@ -298,6 +303,7 @@ section {
     line-height: 2.2rem;
     text-align: center;
     min-width: 300px;
+    margin-top: 0;
   }
 
   .hero-line2 {

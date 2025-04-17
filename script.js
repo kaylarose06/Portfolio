@@ -173,3 +173,19 @@ if (viewerCountEl) {
       console.error("Viewer count fetch failed:", err);
     });
 }
+
+// === Music Popup Logic ===
+const musicPopup = document.getElementById("musicPopup");
+const musicPopupClose = document.getElementById("musicPopupClose");
+
+setTimeout(() => {
+  if (musicPopup) {
+    musicPopup.style.display = "block";
+  }
+}, 7000); // show after 7 seconds
+
+if (musicPopupClose) {
+  musicPopupClose.addEventListener("click", () => {
+    musicPopup.style.display = "none";
+  });
+}

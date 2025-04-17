@@ -785,3 +785,7 @@ footer {
   list-style-position: inside;
   text-align: left;
 }
+
+#musicPopup {
+  top: 300px;
+}

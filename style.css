@@ -19,23 +19,40 @@ h3 {
   font-family: "Prata", serif;
 }
 
-/* Navigation Bar */
+/* Nav Bar Section */
+:root {
+  --nav-h: 64px;
+}
+
+/* Fixed header */
 .navbar {
   position: fixed;
   top: 0;
-  left: 0; /* Ensure it starts at the very left */
-  width: 100%; /* Make sure it spans full width */
-  background-color: #54432e;
-  color: white;
+  left: 0;
+  right: 0;
+  height: var(--nav-h);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 15px 30px;
-  box-sizing: border-box; /* Ensures padding doesn't break layout */
+  background: #54432e; /* your brown */
+  color: white;
   z-index: 1000;
+  box-sizing: border-box;
+  transition: box-shadow 0.2s ease, background 0.2s ease;
 }
 
-/* Fix spacing for navigation links */
+/* push page below header */
+body {
+  padding-top: var(--nav-h);
+}
+
+/* shadow on scroll */
+.navbar.scrolled {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Desktop: show links, hide hamburger */
 .nav-links {
   list-style: none;
   display: flex;
@@ -43,15 +60,55 @@ h3 {
   margin: 0;
   padding: 0;
 }
-
 .nav-links li {
   display: inline;
 }
-
 .nav-links a {
   color: white;
   text-decoration: none;
   font-size: 18px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.4rem;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: white; /* white icon on dark header */
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+  .hamburger {
+    display: inline-block;
+  }
+  body.nav-open .nav-links {
+    background: #d2cdc8; /* popup bg */
+  }
+  body.nav-open .nav-links a {
+    color: #54432e; /* popup link color */
+  }
+
+  /* hide menu by default on mobile */
+  .nav-links {
+    display: none;
+    position: fixed; /* sits under the fixed header */
+    right: 1rem;
+    top: calc(var(--nav-h) + 12px);
+    background: #adadad;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 1001;
+  }
+
+  /* show when toggled */
+  body.nav-open .nav-links {
+    display: flex;
+  }
 }
 
 /* Hero Section */
@@ -385,7 +442,7 @@ section {
 }
 
 .project-button {
-  background-color: #54432e; /* Your theme color */
+  background-color: #54432e;
   color: white;
   font-size: 16px;
   padding: 10px 20px;

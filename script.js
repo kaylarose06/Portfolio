@@ -189,3 +189,25 @@ if (musicPopupClose) {
     musicPopup.style.display = "none";
   });
 }
+
+const ham = document.querySelector(".hamburger");
+const nav = document.querySelector(".nav-links");
+
+if (ham && nav) {
+  // toggle open/close on each click
+  ham.addEventListener("click", () => {
+    document.body.classList.toggle("nav-open");
+
+    // update aria for accessibility
+    const isOpen = document.body.classList.contains("nav-open");
+    ham.setAttribute("aria-expanded", isOpen);
+  });
+
+  // close menu if a nav link is clicked
+  nav.addEventListener("click", (e) => {
+    if (e.target.closest("a")) {
+      document.body.classList.remove("nav-open");
+      ham.setAttribute("aria-expanded", "false");
+    }
+  });
+}
